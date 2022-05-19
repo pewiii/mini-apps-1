@@ -1,2 +1,62 @@
-
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tic-Tac-Toe</title>
+  </head>
+  <body>
+    <div>
+    <h1>Tic-Tac-Toe</h1>
+    </div>
+    <div>
+      <table>
+        <tr>
+          <td id="0-0"></td>
+          <td id="0-1"></td>
+          <td id="0-2"></td>
+        </tr>
+        <tr>
+          <td id="1-0"></td>
+          <td id="1-1"></td>
+          <td id="1-2"></td>
+        </tr>
+        <tr>
+          <td id="2-0"></td>
+          <td id="2-1"></td>
+          <td id="2-2"></td>
+        </tr>
+      </table>
+    </div>
+    <div>
+      <button id="reset">Reset</button>
+    </div>
+    <div>
+      <h2 id="message">X's Turn</h2>
+    </div>
+  </body>
+  <style>
+    body {
+      text-align: center;
+    }
+    td {
+      border: solid black 1px;
+      width: 33.3%;
+      height: 33.3%;
+      background-color: rgb(244, 255, 225);
+      text-align: center;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    td:hover {
+      cursor: pointer;
+      background-color: rgb(255, 255, 225);
+    }
+    table {
+      margin: auto;
+      margin-bottom: 50px;
+      width: 400px;
+      height: 400px;
+      font-size: 50px;
+    }
+  </style>
+  <script src="app.js"></script>
+</html>
 
