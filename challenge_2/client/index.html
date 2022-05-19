@@ -1,2 +1,21 @@
-
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CSV Report Generator</title>
+  </head>
+  <body>
+    <h1>CSV Report Generator</h1>
+    <form action="/generate" method="POST">
+      <textarea name="data"></textarea>
+      <input type="submit" value="Send JSON">
+    </form>
+  </body>
+  <script src="app.js"></script>
+  <style>
+    textarea {
+      width: 400px;
+      height: 400px;
+    }
+  </style>
+</html>
 
