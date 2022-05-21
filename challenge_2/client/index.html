@@ -2,20 +2,16 @@
 <html>
   <head>
     <title>CSV Report Generator</title>
+    <script src="/jquery/dist/jquery.min.js"></script>
   </head>
   <body>
     <h1>CSV Report Generator</h1>
-    <form action="/generate" method="POST">
-      <textarea name="data"></textarea>
-      <input type="submit" value="Send JSON">
+    <form id="form">
+      <input name="file" type="file" id="upload_file">
+      <input type="submit" value="Send JSON" id="upload_btn">
     </form>
   </body>
+  <div id="result"></div>
   <script src="app.js"></script>
-  <style>
-    textarea {
-      width: 400px;
-      height: 400px;
-    }
-  </style>
 </html>
 

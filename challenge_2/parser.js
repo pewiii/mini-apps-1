@@ -1,8 +1,13 @@
 class Parser {
   constructor(json) {
-    this.json = JSON.parse(json);
-    this.flat = flatten(this.json);
-    this.csv = makeCSV(this.flat);
+    try {
+      this.json = JSON.parse(json);
+      this.flat = flatten(this.json);
+      this.csv = makeCSV(this.flat);
+
+    } catch {
+      this.csv = false;
+    }
   }
 }
 
@@ -22,19 +27,26 @@ var flatten = function(current) {
 
 var makeCSV = function(array) {
   var keys = Object.keys(array[0]);
-  var obj = {};
+  var str = '';
   for (var i = 0; i < keys.length; i++) {
-    obj[keys[i]] = [];
-  }
-  for (var i = 0; i < array.length; i++) {
-    for (var key in array[i]) {
-      obj[key][i] = array[i][key];
+    str += keys[i] || '';
+    if (i === keys.length - 1) {
+      str += '\n';
+    } else {
+      str += ',';
     }
   }
-  var str = '';
   for (var i = 0; i < array.length; i++) {
-
+    keys.forEach((key, index)=> {
+      str += array[i][key];
+      if (index === keys.length - 1) {
+        str += '\n';
+      } else {
+        str += ',';
+      }
+    });
   }
+  return str;
 }
 
 module.exports = Parser;
